@@ -1,10 +1,9 @@
 package demo.com.stickerapp.ui.main;
 
 
-public class MainViewModel {
+import demo.com.stickerapp.ui.base.BaseViewModel;
+
+public class MainViewModel extends BaseViewModel<MainNavigator> {
 
 
-    public void sayHi(){
-        System.out.println("Saying hi from the main view Model");
-    }
 }

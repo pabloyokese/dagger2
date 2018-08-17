@@ -4,25 +4,39 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 import demo.com.stickerapp.R;
+import demo.com.stickerapp.ui.base.BaseActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
 
     @Inject
     MainViewModel viewModel;
+
+    @Override
+    public int getLayoutId() {
+        return 0;
+    }
+
+    @Override
+    public MainViewModel getViewModel() {
+        return null;
+    }
+
+    @Override
+    public int getBindingVariable() {
+        return 0;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AndroidInjection.inject(this);
-        viewModel.sayHi();
     }
 
     public static Intent newIntent(Context context) {
