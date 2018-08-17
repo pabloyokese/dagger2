@@ -72,12 +72,12 @@
 
                     </android.support.design.widget.AppBarLayout>
 
-                    <com.mindorks.placeholderview.SwipePlaceHolderView
-                        android:id="@+id/cardsContainer"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:action="@{viewModel.action}"
-                        app:adapter="@{viewModel.questionDataList}" />
+                    <!--<com.mindorks.placeholderview.SwipePlaceHolderView-->
+                        <!--android:id="@+id/cardsContainer"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--app:action="@{viewModel.action}"-->
+                        <!--app:adapter="@{viewModel.questionDataList}" />-->
 
                 </LinearLayout>
             </android.support.design.widget.CoordinatorLayout>
@@ -94,25 +94,25 @@
                 app:itemTextColor="@color/black_effective"
                 app:menu="@menu/drawer">
 
-                <TextView
-                    android:id="@+id/tvAppVersion"
-                    style="@style/TextStyle.Title.Sub"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:padding="5dp"
-                    android:text="@{viewModel.appVersion}" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvAppVersion"-->
+                    <!--style="@style/TextStyle.Title.Sub"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="bottom|end"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:text="@{viewModel.appVersion}" />-->
             </android.support.design.widget.NavigationView>
 
         </android.support.v4.widget.DrawerLayout>
 
-        <android.support.v4.widget.ContentLoadingProgressBar
-            android:id="@+id/address_looking_up"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
+        <!--<android.support.v4.widget.ContentLoadingProgressBar-->
+            <!--android:id="@+id/address_looking_up"-->
+            <!--style="?android:attr/progressBarStyleLarge"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />-->
 
     </FrameLayout>
 

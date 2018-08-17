@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
+import demo.com.stickerapp.BR;
 import demo.com.stickerapp.R;
+import demo.com.stickerapp.databinding.ActivitySplashBinding;
 import demo.com.stickerapp.ui.base.BaseActivity;
+import demo.com.stickerapp.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
@@ -19,23 +22,22 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.activity_main;
     }
 
     @Override
     public MainViewModel getViewModel() {
-        return null;
+        return viewModel;
     }
 
     @Override
     public int getBindingVariable() {
-        return 0;
+        return BR.viewModel;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         AndroidInjection.inject(this);
     }
 
