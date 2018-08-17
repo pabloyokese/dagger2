@@ -4,11 +4,16 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import demo.com.stickerapp.ui.main.MainActivity;
 import demo.com.stickerapp.ui.main.MainActivityModule;
+import demo.com.stickerapp.ui.splash.SplashActivity;
+import demo.com.stickerapp.ui.splash.SplashActivityModule;
 
 @Module
 public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = MainActivityModule.class)
     abstract MainActivity bindMainActivity();
+
+    @ContributesAndroidInjector(modules = SplashActivityModule.class)
+    abstract SplashActivity bindSplashActivity();
 
 }
