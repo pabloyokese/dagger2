@@ -8,8 +8,8 @@ import demo.com.stickerapp.data.DummyClass;
 public class MainActivityModule {
 
     @Provides
-    DummyClass provideMainViewModel() {
-        return new DummyClass();
+    MainViewModel provideMainViewModel() {
+        return new MainViewModel();
     }
 
 }
