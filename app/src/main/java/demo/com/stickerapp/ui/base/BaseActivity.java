@@ -37,6 +37,11 @@ public abstract class BaseActivity<T extends ViewDataBinding,V extends BaseViewM
      */
     public abstract int getBindingVariable();
 
+
+    public T getViewDataBinding() {
+        return mViewDataBinding;
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         performDependencyInjection();
