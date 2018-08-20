@@ -10,6 +10,7 @@ import demo.com.stickerapp.R;
 import demo.com.stickerapp.BR;
 import demo.com.stickerapp.databinding.ActivitySplashBinding;
 import demo.com.stickerapp.ui.base.BaseActivity;
+import demo.com.stickerapp.ui.login.LoginActivity;
 import demo.com.stickerapp.ui.main.MainActivity;
 
 
@@ -26,9 +27,9 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding,SplashVie
 
     @Override
     public void openLoginActivity() {
-//        Intent intent = LoginActivity.newIntent(SplashActivity.this);
-//        startActivity(intent);
-//        finish();
+        Intent intent = LoginActivity.newIntent(SplashActivity.this);
+        startActivity(intent);
+        finish();
     }
 
     @Override

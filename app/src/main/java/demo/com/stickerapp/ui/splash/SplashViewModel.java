@@ -9,6 +9,7 @@ public class SplashViewModel extends BaseViewModel<SplashNavigator>{
     }
 
     private void decideNextActivity() {
-        getNavigator().openMainActivity();
+//        getNavigator().openMainActivity();
+        getNavigator().openLoginActivity();
     }
 }
