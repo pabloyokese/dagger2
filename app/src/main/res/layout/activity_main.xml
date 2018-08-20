@@ -94,14 +94,14 @@
                 app:itemTextColor="@color/black_effective"
                 app:menu="@menu/drawer">
 
-                <!--<TextView-->
-                    <!--android:id="@+id/tvAppVersion"-->
-                    <!--style="@style/TextStyle.Title.Sub"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="bottom|end"-->
-                    <!--android:padding="5dp"-->
-                    <!--android:text="@{viewModel.appVersion}" />-->
+                <TextView
+                    android:id="@+id/tvAppVersion"
+                    style="@style/TextStyle.Title.Sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:padding="5dp"
+                    android:text="@{viewModel.appVersion}" />
             </android.support.design.widget.NavigationView>
 
         </android.support.v4.widget.DrawerLayout>
