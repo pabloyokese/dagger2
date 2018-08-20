@@ -5,7 +5,6 @@ import android.arch.lifecycle.ViewModelProvider;
 import dagger.Module;
 import dagger.Provides;
 import demo.com.stickerapp.ViewModelProviderFactory;
-import demo.com.stickerapp.data.DummyClass;
 
 @Module
 public class MainActivityModule {
