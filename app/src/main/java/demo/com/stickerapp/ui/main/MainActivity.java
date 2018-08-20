@@ -124,7 +124,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                     switch (item.getItemId()) {
                         case R.id.navItemAbout:
 //                            showAboutFragment();
-                            System.out.print("About !");
                             return true;
                         case R.id.navItemRateUs:
 //                            RateUsDialog.newInstance().show(getSupportFragmentManager());
