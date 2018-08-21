@@ -5,6 +5,8 @@ import android.arch.lifecycle.ViewModelProvider;
 import dagger.Module;
 import dagger.Provides;
 import demo.com.stickerapp.ViewModelProviderFactory;
+import demo.com.stickerapp.data.DataManager;
+import demo.com.stickerapp.utils.rx.SchedulerProvider;
 
 @Module
 public class MainActivityModule {
@@ -15,8 +17,8 @@ public class MainActivityModule {
     }
 
     @Provides
-    MainViewModel provideMainViewModel() {
-        return new MainViewModel();
+    MainViewModel provideMainViewModel(DataManager dataManager, SchedulerProvider schedulerProvider) {
+        return new MainViewModel(dataManager, schedulerProvider);
     }
 
 }
