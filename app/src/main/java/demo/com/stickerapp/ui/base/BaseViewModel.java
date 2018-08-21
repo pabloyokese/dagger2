@@ -21,6 +21,16 @@ public abstract class BaseViewModel<N> extends ViewModel {
 
     private WeakReference<N> mNavigator;
     private CompositeDisposable mCompositeDisposable;
+
+    @Override
+    protected void onCleared() {
+        mCompositeDisposable.dispose();
+        super.onCleared();
+    }
+
+    public CompositeDisposable getCompositeDisposable() {
+        return mCompositeDisposable;
+    }
     private final ObservableBoolean mIsLoading = new ObservableBoolean(false);
 
     public DataManager getDataManager() {

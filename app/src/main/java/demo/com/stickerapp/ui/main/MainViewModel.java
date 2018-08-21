@@ -36,19 +36,34 @@ public class MainViewModel extends BaseViewModel<MainNavigator> {
         appVersion.set(version);
     }
     public void onNavMenuCreated() {
-//        final String currentUserName = getDataManager().getCurrentUserName();
-//        if (!TextUtils.isEmpty(currentUserName)) {
-//            userName.set(currentUserName);
-//        }
-//
-//        final String currentUserEmail = getDataManager().getCurrentUserEmail();
-//        if (!TextUtils.isEmpty(currentUserEmail)) {
-//            userEmail.set(currentUserEmail);
-//        }
-//
+        final String currentUserName = getDataManager().getCurrentUserName();
+        if (!TextUtils.isEmpty(currentUserName)) {
+            userName.set(currentUserName);
+        }
+
+        final String currentUserEmail = getDataManager().getCurrentUserEmail();
+        if (!TextUtils.isEmpty(currentUserEmail)) {
+            userEmail.set(currentUserEmail);
+        }
+
 //        final String profilePicUrl = getDataManager().getCurrentUserProfilePicUrl();
 //        if (!TextUtils.isEmpty(profilePicUrl)) {
 //            userProfilePicUrl.set(profilePicUrl);
 //        }
+    }
+
+    public void logout() {
+        setIsLoading(true);
+        getCompositeDisposable().add(getDataManager().doLogoutApiCall()
+                .doOnSuccess(response -> getDataManager().setUserAsLoggedOut())
+                .subscribeOn(getSchedulerProvider().io())
+                .observeOn(getSchedulerProvider().ui())
+                .subscribe(response -> {
+                    setIsLoading(false);
+                    getNavigator().openLoginActivity();
+                }, throwable -> {
+                    setIsLoading(false);
+                    getNavigator().handleError(throwable);
+                }));
     }
 }

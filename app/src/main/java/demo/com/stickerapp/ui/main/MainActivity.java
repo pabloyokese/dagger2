@@ -28,6 +28,7 @@ import demo.com.stickerapp.databinding.ActivitySplashBinding;
 import demo.com.stickerapp.databinding.NavHeaderMainBinding;
 import demo.com.stickerapp.ui.base.BaseActivity;
 import demo.com.stickerapp.databinding.ActivityMainBinding;
+import demo.com.stickerapp.ui.login.LoginActivity;
 
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> implements MainNavigator {
@@ -132,12 +133,44 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 //                            startActivity(FeedActivity.newIntent(MainActivity.this));
                             return true;
                         case R.id.navItemLogout:
-//                            mMainViewModel.logout();
+                            mMainViewModel.logout();
                             return true;
                         default:
                             return false;
                     }
                 });
+    }
+
+    @Override
+    public void handleError(Throwable throwable) {
+        // handle error
+    }
+
+    @Override
+    public void openLoginActivity() {
+        startActivity(LoginActivity.newIntent(this));
+        finish();
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mDrawer != null) {
+            mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        }
+    }
+
+    private void lockDrawer() {
+        if (mDrawer != null) {
+            mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        }
+    }
+
+    private void unlockDrawer() {
+        if (mDrawer != null) {
+            mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+        }
     }
 
 }

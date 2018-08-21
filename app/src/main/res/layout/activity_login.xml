@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|top"
                     android:layout_marginTop="60dp"
-                    android:text="@string/login_dummy"
+                    android:text="@string/login_title"
                     android:textAllCaps="true"
                     android:textSize="20sp" />
 
@@ -69,7 +69,7 @@
                             android:background="@drawable/input_border_bottom"
                             android:cursorVisible="true"
                             android:gravity="center|left|bottom"
-                            android:hint="@string/email"
+                            android:hint="@string/user"
                             android:inputType="textEmailAddress"
                             android:maxLength="50"
                             android:paddingBottom="10dp"

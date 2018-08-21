@@ -3,6 +3,8 @@ package demo.com.stickerapp.ui.login;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import demo.com.stickerapp.BR;
 
 import javax.inject.Inject;
@@ -10,6 +12,7 @@ import javax.inject.Inject;
 import demo.com.stickerapp.R;
 import demo.com.stickerapp.databinding.ActivityLoginBinding;
 import demo.com.stickerapp.ui.base.BaseActivity;
+import demo.com.stickerapp.ui.main.MainActivity;
 
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginViewModel> implements LoginNavigator {
@@ -52,11 +55,20 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginViewMo
 
     @Override
     public void login() {
-
+        String email = mActivityLoginBinding.etEmail.getText().toString();
+        String password = mActivityLoginBinding.etPassword.getText().toString();
+        if (mLoginViewModel.isEmailAndPasswordValid(email, password)) {
+            hideKeyboard();
+            mLoginViewModel.login(email, password);
+        } else {
+            Toast.makeText(this, getString(R.string.invalid_email_password), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     public void openMainActivity() {
-
+        Intent intent = MainActivity.newIntent(LoginActivity.this);
+        startActivity(intent);
+        finish();
     }
 }

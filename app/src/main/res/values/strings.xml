@@ -16,8 +16,11 @@
     <string name="title_activity_login">LoginActivity</string>
 
     <!--Login-->
-    <string name="login_dummy">Login Dummy</string>
+    <string name="login_title">Login</string>
     <string name="login">Login</string>
-    <string name="email">Email</string>
+    <string name="user">User</string>
     <string name="password">Password</string>
+
+    <!--Login Validation-->
+    <string name="invalid_email_password">Please provide a valid email and password.</string>
 </resources>
